@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><?=$this->title?></title>
+		<link rel="stylesheet" type="text/css" href="./public/css/token.css">
+		<link rel="stylesheet" type="text/css" href="./public/vendor/icomoon/style.css">
+
+		<script type="text/javascript" src="./public/vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="./public/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	</head>
+	<body>
+
+		<div document-table>
+			<div header>
+				<a href="./">
+					<button>
+						<i class="icon-back"></i>
+						<p>Voltar</p>
+					</button>
+				</a>
+				<p title>Token: <?=$this->token?></p>
+			</div>
+
+			<div content-table>
+				<table width="800">
+					<tr title>
+						<?php
+							echo '<td>'.implode( "</td><td>", array_keys( (array)$this->keyCollums ) ).'</td>';
+						?>
+					</tr>
+
+					<?php 
+						foreach( $this->records as $record ){
+					?>
+						<tr>
+							<?php
+								echo '<td>'.implode( "</td><td>", array_values( (array)$record ) ).'</td>';
+							?>
+						</tr>
+					<?php } ?>
+					<tr result>
+						<td colspan="6">
+							<span>Receita Bruta Total:</span>
+							R$ <?=$this->grossRevenue?>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+	</body>
+</html>

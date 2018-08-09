@@ -1,0 +1,299 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+body {
+    background: #EFEFEF;
+    overflow: hidden;
+}
+
+
+/* Box Button */
+
+div[box-button] {
+    width: 400px;
+    height: 50px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -25px;
+}
+
+div[box-button] button, div[box-success] button, div[box-error] button {
+    width: 100%;
+    height: 50px;
+    background: #8e44ad;
+    border: none;
+    border-radius: 50px;
+    padding: 5px 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+div[box-button] button[drop] {
+    border-radius: 0px;
+}
+
+div[box-button] i {
+    font-size: 20px;
+    color: #FFF;
+}
+
+div[box-button] button:HOVER, div[box-success] button:HOVER, , div[box-error] button:HOVER {
+    background: #9b59b6;
+}
+
+div[box-button] button p {
+    color: #FFF;
+    font-size: 16px;
+}
+
+
+/* Box DropZone */
+
+div[box-drop] {
+    width: 100%;
+    height: 100%;
+    background: #b67ece;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+}
+
+div[box-drop] div[border-dotted] {
+    width: 450px;
+    height: 300px;
+    position: fixed;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -200px;
+}
+
+div[box-drop] i[icon-upload] {
+    color: #2d1537;
+    font-size: 48px;
+    display: block;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 120px;
+}
+
+div[box-drop] p {
+    text-align: center;
+    color: #2d1537;
+    font-size: 14px;
+}
+
+div[box-drop][selected] {
+    opacity: 1;
+}
+
+
+/* Progress */
+
+div[progress] {
+    width: 400px;
+    height: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -25px;
+}
+
+div[progress] div[progressbar] {
+    border-bottom: solid 2px #AAA;
+}
+
+div[progress] div[progressbar] div[percentage] {
+    border-bottom: solid 2px #b67ece;
+    margin-bottom: -2px;
+    width: 0%;
+}
+
+div[progress] p[text-percent] {
+    color: #555;
+    font-size: 15px;
+    padding: 5px;
+    display: block;
+}
+
+
+/* Box Success, Box Error */
+
+div[box-success], div[box-error] {
+    width: 400px;
+    height: 253px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -126.5px;
+    margin-left: -200px;
+}
+
+div[box-success] i, div[box-error] i {
+    text-align: center;
+    font-size: 28px;
+    background: #b67ece;
+    color: #FFF;
+    display: block;
+    padding: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 3px #DDD;
+}
+
+div[box-success] p[text], div[box-error] p[text] {
+    font-size: 16px;
+    text-align: center;
+    line-height: 25px;
+    color: #555;
+}
+
+div[box-success] div, div[box-error] div {
+    display: block;
+    border-top: solid 1px #DDD;
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+div[box-success] div label, div[box-error] div label {
+    color: #555;
+}
+
+div[box-success] div span, div[box-error] div span {
+    color: #333;
+}
+
+div[box-success] button, div[box-error] button {
+    margin-top: 20px;
+}
+
+div[box-success] button p, div[box-error] button p {
+    color: #FFF;
+    font-size: 16px;
+}
+
+
+/* Box Error */
+
+div[box-error] {
+    height: 240px;
+    margin-top: -120px;
+}
+
+/* Input File */
+
+input[type="file"] {
+    display: none;
+}
+
+/* List Tokens */
+
+div[content-list-tokens] {
+    width: 300px;
+    left: -250px;
+    height: 100%;
+    background: #DDD;
+    position: fixed;
+    box-shadow: 0px 0px 3px #999;
+    top: 0px;
+    transition: 0.3s;
+    z-index: 10;
+}
+
+div[content-list-tokens][active] {
+    left: 0px;
+}
+
+div[content-list-tokens] div[box-all-tokens] {
+    width: 250px;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+div[content-list-tokens] div[content-tab]{
+    width: 49px;
+    height: 100%;
+    position: relative;
+    border-left: solid 1px #BBB;
+    float: left;
+}
+
+div[content-list-tokens] div[content-tab] div[item-icon-token] {
+    height: 70px;
+    width: 49px;
+    top: 50%;
+    position: absolute;
+    margin-top: -35px;
+}
+
+div[content-list-tokens] div[content-tab] div[item-icon-token] i {
+    text-align: center;
+    line-height: 25px;
+    color: #555;
+    display: block;
+    font-size: 16px;
+}
+
+div[content-list-tokens] div[content-tab] div[item-icon-token] i[icon-arrow] {
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+div[box-all-tokens] div[header] {
+    border-bottom: solid 1px #AAA;
+    overflow: hidden;
+    padding: 5px 10px;
+    color: #777;
+
+}
+div[box-all-tokens] div[header] p {
+    font-size: 14px;
+}
+
+div[content-list] div[content-token] {
+    background: #FFF;
+    border: solid 1px #AAA;
+    margin: 5px;
+    overflow: hidden;
+    width: 240px; 
+}
+
+div[content-list] div[content-token] div[name-token] {
+    font-size: 12px;
+    width: 180px;
+    line-height: 40px;
+    padding: 0px 10px;
+    float: left;
+    color: #444;
+}
+
+div[content-list] div[content-token] i {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #8e44ad;
+    float: left;
+}

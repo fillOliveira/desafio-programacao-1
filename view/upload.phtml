@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><?=$this->title?></title>
+		<link rel="stylesheet" type="text/css" href="./public/css/upload.css">
+		<link rel="stylesheet" type="text/css" href="./public/vendor/icomoon/style.css">
+
+		<link rel="stylesheet" type="text/css" href="./public/vendor/simplebar-master/simplebar.css">
+
+		<script type="text/javascript" src="./public/vendor/jquery/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="./public/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="./public/vendor/simplebar-master/simplebar.js"></script>
+
+		<script type="text/javascript" src="./public/js/upload.js"></script>
+	</head>
+	<body id="content" ondrop="upload.processDrop(event); return false;">
+
+		<div content-list-tokens>
+
+			<div box-all-tokens>
+
+				<div header>
+					<p>Tokens Ativos (Arquivos)</p>
+				</div>
+
+				<div content-list>
+					<?php foreach( $this->tokenList as $arrToken ){ ?>
+					<a href="./<?=$arrToken->token?>">
+						<div content-token>
+							<div name-token><?=$arrToken->token?></div>
+							<i class="icon-angle-double-right"></i>
+						</div>
+					</a>
+					<?php } ?>
+				</div>
+
+			</div>
+
+			<div content-tab>
+
+				<div item-icon-token>
+					<i icon-tab class="icon-save2"></i>
+					<i icon-arrow class="icon-arrow-right4"></i>
+				</div>
+			</div>
+		</div>
+
+		<div container-upload>
+
+			<!-- <div box-success>
+				<i class="icon-check2"></i>
+				<p text>Arquivo registrado com sucesso! clique no botão "Arquivos .TAB" para mais detalhes</p>
+				<div>
+					<label>Receita Bruta:</label>
+					<span>584</span>
+
+					<button>
+						<p>Enviar outro Arquivo</p>
+					</button>
+				</div>
+			</div> -->
+
+			<!-- <div box-error>
+				<i class="icon-cross2"></i>
+				<p text>Seu upload deve ter bladiadjoiasj dasiojdois dioasdioas odisaioddio sdi asiod aiod sio</p>
+				<div>
+					<button>
+						<p>Entendi</p>
+					</button>
+				</div>
+			</div> -->
+
+			<!-- <div progress>
+				<div progressbar>
+					<div percentage></div>
+				</div>
+				<p text-percent>50%</p>
+			</div> -->
+
+			<!-- <div box-button id="box-button" ondrop="alert('fdp');return false;">
+				<button>
+					<p>Clique ou Arraste seu Arquivo .TAB</p>
+				</button>
+			</div> -->
+
+			<!-- <div box-drop style="display: none;">
+				<div border-dotted>
+					<i icon-upload class="icon-upload-to-cloud"></i>
+					<p>Arraste seu aquivo para cá</p>
+				</div>
+			</div> -->
+
+		</div>
+
+	</body>
+</html>

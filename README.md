@@ -1,46 +1,52 @@
-# Desafio de programação 1
-A idéia deste desafio é nos permitir avaliar melhor as habilidades de candidatos à vagas de programador, de vários níveis.
+# Amostra de Código de Programação
+A idéia desta amostra de código é permitir que terceiros vejam meus códigos e avaliem melhor as minhas habilidades como desenvolvedor programador.
 
-Este desafio deve ser feito por você em sua casa. Gaste o tempo que você quiser, porém normalmente você não deve precisar de mais do que algumas horas.
 
-## Instruções de entrega do desafio
-1. Primeiro, faça um fork deste projeto para sua conta no Github (crie uma se você não possuir).
-1. Em seguida, implemente o projeto tal qual descrito abaixo, em seu próprio fork.
-1. Por fim, empurre todas as suas alterações para o seu fork no Github e envie um pull request para este repositório original. Se você já entrou em contato com alguém da Nexaas sobre uma vaga, avise também essa pessoa por email, incluindo no email o seu usuário no Github.
-
-## Instruções alternativas de entrega do desafio (caso você não queira que sua submissão seja pública)
-1. Faça um clone deste repositório.
-1. Em seguida, implemente o projeto tal qual descrito abaixo, em seu clone local.
-1. Por fim, envie via email um arquivo patch para seu contato na Nexaas.
 
 ## Descrição do projeto
-Você recebeu um arquivo de texto com os dados de vendas da empresa. Precisamos criar uma maneira para que estes dados sejam importados para um banco de dados.
+Há arquivos de texto com os dados de vendas da empresa. O projeto cria uma maneira para que estes dados sejam importados para um banco de dados.
 
-Sua tarefa é criar uma interface web que aceite upload de arquivos, normalize os dados e armazene-os em um banco de dados relacional.
+O projeto é uma interface que aceita upload de arquivos, trata os dados os dados e os armazena num banco de dados relacional. (MySql)
 
-Sua aplicação web DEVE:
+1. Aceita o upload de arquivos separados por TAB com as seguintes colunas: purchaser name, item description, item price, purchase count, merchant address, merchant name. O Sistema assume que as colunas estarão sempre nesta ordem e que sempre haverá dados em cada coluna, e que sempre haverá uma linha de cabeçalho. Um arquivo de exemplo chamado example_input.tab no path "public/test/"(public/test/example_input.tab).
 
-1. Aceitar (via um formulário) o upload de arquivos separados por TAB com as seguintes colunas: purchaser name, item description, item price, purchase count, merchant address, merchant name. Você pode assumir que as colunas estarão sempre nesta ordem, que sempre haverá dados em cada coluna, e que sempre haverá uma linha de cabeçalho. Um arquivo de exemplo chamado example_input.tab está incluído neste repositório.
-1. Interpretar ("parsear") o arquivo recebido, normalizar os dados, e salvar corretamente a informação em um banco de dados relacional.
-1. Exibir a receita bruta total representada pelo arquivo enviado após o upload + parser.
-1. Ser escrita obrigatoriamente em Ruby 2.0+, Python 2.7+ ou PHP 5.3+ (caso esteja entrevistando para uma vaga específica, utilize a linguagem solicitada pela vaga).
-1. Ser simples de configurar e rodar, funcionando em ambiente compatível com Unix (Linux ou Mac OS X). Ela deve utilizar apenas linguagens e bibliotecas livres ou gratuitas.
+2. Interpreta o arquivo recebido, trata os dados, e salvaa corretamente a informação em um banco de dados relacional.
 
-Sua aplicação web não precisa:
+3. Exibe a receita bruta total representada pelo arquivo enviado após o upload.
 
-1. Lidar com autenticação ou autorização (pontos extras se ela fizer, mais pontos extras se a autenticação for feita via OAuth).
-1. Ser escrita usando algum framework específico (mas não há nada errado em usá-los também, use o que achar melhor).
-1. Ter uma aparência bonita.
+4. Foi escrito usando PHP 7.1.0.
 
-## Avaliação
-Seu projeto será avaliado de acordo com os seguintes critérios. 
+5. É um MVC criado do zero, organizado, padronizado, com PHP puro e simples de configurar e rodar, funciona em ambiente compatível com Unix (Linux ou Mac OS X). E foi focada ao máximo ser desenvolvido tudo do zero e sem plugins ou bibliotecas externas para demonstrar conhecimento de saber como é feito por de trás desses plugins e extenções prontas(Porém usei a extensão PDO).
 
-1. Sua aplicação preenche os requerimentos básicos?
-1. Você documentou a maneira de configurar o ambiente e rodar sua aplicação?
-1. Você seguiu as instruções de envio do desafio?
 
-Adicionalmente, tentaremos verificar a sua familiarização com as bibliotecas padrões (standard libs), bem como sua experiência com programação orientada a objetos a partir da estrutura de seu projeto.
 
-### Referência
+## Como Configurar e Rodar a Aplicação
+1. Certificar que o PHP o Apache estejam configurados de forma correta:
+	a. mod_rewrite ativado.
+	b. Extensão PDO do PHP ativado.
+	c. Ter acesso à um banco de dados Mysql
+		c.1. Ter uma "database" dedicada as tabelas do projeto
+2. Configurar arquivos de conexão e constantes
+	a. Subir/Importar as tabelas para o banco de dados, na database criada, arquivo SQL para criação de tabela estão na pasta "/migrations", no arquivo "migrations/table.sql"
+	b. Configurar dados de conexão com o banco de dados no arquivo "lib/Config.php"
+	c. configurar constante "APP_ROOT", que está na raiz do MVC, o arquivo "index.php", essa constante deve ter link para o projeto e ser um link absoluto porém SEM o "http://, https://,www., //". Exemplo: localhost/pasta_do_arquivo/
 
-Este desafio foi baseado neste outro desafio: https://github.com/lschallenges/data-engineering
+
+
+## Descrição das Páginas
+Há 2 páginas.
+1. Página principal com upload via droppable ou clicando no botão e a listagem de tokens pois o sistema conta com um sistema de API para upload, após o upload, mostra a margem bruta:
+	OBS:
+	a. Cria token e apartir deste token, permite subir o arquivo.
+	b. Se o arquivo for inválido e o token já estiver sido criado, ele será reutilizado para o próximo arquivo.
+2. Página de registro por token
+
+
+
+## Autor
+Felipe Oliveira <felipe.wget@gmail.com>
+Data: 09/08/2018
+
+## Observações
+1. git clone https://github.com/myfreecomm/desafio-programacao-1.git
+2. Alterei para pasta Nexaas

@@ -1,0 +1,9 @@
+{
+  "name": "Upload Nexaas",
+  "version": "1.0.0",
+  "description": "Upload Nexaas in MVC",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Felipe Oliveira",
+  "license": "ISC"
+}

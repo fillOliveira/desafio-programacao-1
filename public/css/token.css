@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+body {
+    background: #EFEFEF;
+}
+
+div[document-table] {
+	width: 800px;
+	min-height: 0px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	display: block;
+	background: #FFF;
+	box-shadow: 0px 0px 5px #555;
+}
+
+div[document-table] div[header] {
+	padding: 5px;
+	border-bottom: solid 1px #DDD;
+	overflow: hidden;
+}
+
+div[document-table] div[header] button {
+	float: left;
+	border: none;
+	background: transparent;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+}
+
+div[document-table] div[header] button i {
+	float: left;
+	width: 30px;
+	line-height: 50px;
+	color: #8e44ad;
+}
+
+div[document-table] div[header] button p {
+	float: left;
+	width: 50px;
+	line-height: 50px;
+	color: #8e44ad;
+}
+
+div[document-table] div[header] p[title] {
+	line-height: 50px;
+	padding-left: 50px;
+	float: left;
+	font-size: 15px;
+	color: #555;
+}
+
+div[content-table] table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+div[content-table] table td {
+	border-bottom: solid 1px #DDD;
+	padding: 10px;
+	font-size: 15px;
+	color: #555;
+}
+
+div[content-table] table tr[title] td, div[content-table] table tr[result] td {
+	background: #EEE;
+	font-size: 14px;
+}
